@@ -1,11 +1,12 @@
 # _*_ coding: utf-8 _*_
 
-"""类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----类型和运算"""
+"""类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----
+类型和运算----类型和运算----类型和运算----类型和运算----类型和运算----类型和运算"""
 
 #-- 寻求帮助:
     dir(obj)            # 简单的列出对象obj所包含的方法名称，返回一个字符串列表
     help(obj.func)      # 查询obj.func的具体介绍和用法
-    
+
 #-- 测试类型的三种方法，推荐第三种
     if type(L) == type([]):
         print("L is list")
@@ -13,7 +14,7 @@
         print("L is list")
     if isinstance(L, list):
         print("L is list")
-        
+
 #-- Python数据类型：哈希类型、不可哈希类型
     # 哈希类型，即在原地不能改变的变量类型，不可变类型。可利用hash函数查看其hash值，也可以作为字典的key
     "数字类型：int, float, decimal.Decimal, fractions.Fraction, complex"
@@ -33,7 +34,7 @@
     int(string, base)                            # 将字符串转化为整数，base为进制数
     # 2.x中，有两种整数类型：一般整数（32位）和长整数（无穷精度）。可以用l或L结尾，迫使一般整数成为长整数
     float('inf'), float('-inf'), float('nan')    # 无穷大, 无穷小, 非数
-    
+
 #-- 数字的表达式操作符
     yield x                                      # 生成器函数发送协议
     lambda args: expression                      # 生成匿名函数
@@ -49,17 +50,17 @@
     -x, +x, ~x                                   # 一元减法、识别、按位求补（取反）
     x[i], x[i:j:k]                               # 索引、分片、调用
     int(3.14), float(3)                          # 强制类型转换
-    
+
 #-- 整数可以利用bit_length函数测试所占的位数
     a = 1;       a.bit_length()    # 1
     a = 1024;    a.bit_length()    # 11
-    
+
 #-- repr和str显示格式的区别
     """
     repr格式：默认的交互模式回显，产生的结果看起来它们就像是代码。
     str格式：打印语句，转化成一种对用户更加友好的格式。
     """
-    
+
 #-- 数字相关的模块
     # math模块
     # Decimal模块：小数模块
@@ -89,13 +90,13 @@
     s.update([10,37,42])                         # 利用[......]更新s集合
     x in s,  x not in s                          # 集合中是否存在某个值
     s.issubset(t);      s <= t                   # 测试是否 s 中的每一个元素都在 t 中
-    s.issuperset(t);    s >= t                   # 测试是否 t 中的每一个元素都在 s 中 
-    s.copy(); 
+    s.issuperset(t);    s >= t                   # 测试是否 t 中的每一个元素都在 s 中
+    s.copy();
     s.discard(x);                                # 删除s中x
     s.clear()                                    # 清空s
     {x**2 for x in [1, 2, 3, 4]}                 # 集合解析，结果：{16, 1, 4, 9}
     {x for x in 'spam'}                          # 集合解析，结果：{'a', 'p', 's', 'm'}
-    
+
 #-- 集合frozenset，不可变对象
     """
     set是可变对象，即不存在hash值，不能作为字典的键值。同样的还有list等(tuple是可以作为字典key的)
@@ -111,7 +112,7 @@
     type(True)                   # 返回<class 'bool'>
     isinstance(False, int)       # bool类型属于整型，所以返回True
     True == 1; True is 1         # 输出(True, False)
-    
+
 #-- 动态类型简介
     """
     变量名通过引用，指向对象。
@@ -140,7 +141,7 @@
     for x in s: print(x)                    # 字符串迭代，成员关系
     [x*2 for x in s]                        # 字符串列表解析
     ','.join(['a', 'b', 'c'])               # 字符串输出，结果：a,b,c
-    
+
 #-- 内置str处理函数：
     str1 = "stringobject"
     str1.upper(); str1.lower(); str1.swapcase(); str1.capitalize(); str1.title()        # 全部大写，全部小写、大小写转换，首字母大写，每个单词的首字母都大写
@@ -168,7 +169,7 @@
             hello python
             hello my friend"""
     # mantra为"""hello world \n hello python \n hello my friend"""
-    
+
 #-- 索引和分片：
     S[0], S[len(S)–1], S[-1]                # 索引
     S[1:3], S[1:], S[:-1], S[1:10:2]        # 分片，第三个参数指定步长，如`S[1:10:2]`是从1位到10位没隔2位获取一个字符。
@@ -179,7 +180,7 @@
     ord('s'), chr(115)                      # 返回(115, 's')
     int('1001', 2)                          # 将字符串作为二进制数字，转化为数字，返回9
     bin(13), oct(13), hex(13)               # 将整数转化为二进制/八进制/十六进制字符串，返回('0b1101', '015', '0xd')
-    
+
 #-- 另类字符串连接
     name = "wang" "hong"                    # 单行，name = "wanghong"
     name = "wang" \
@@ -198,7 +199,7 @@
     "%6.2f*%-6.2f*%06.2f*%+6.2f" % (x, x, x, x)                 # 对齐方式：'  1.23*1.23  *001.23* +1.23'
     "%(name1)d---%(name2)s" % {"name1":23, "name2":"value2"}    # 基于字典的格式化表达式
     "%(name)s is %(age)d" % vars()                              # vars()函数调用返回一个字典，包含了所有本函数调用时存在的变量
-    
+
 #-- Python中的字符串格式化实现2--字符串格式化调用方法
     # 普通调用
     "{0}, {1} and {2}".format('spam', 'ham', 'eggs')            # 基于位置的调用
@@ -248,13 +249,13 @@
     a = [1, 2, 3], b = a[10:]                         # 注意，这里不会引发IndexError异常，只会返回一个空的列表[]
     a = [], a += [1]                                  # 这里实在原有列表的基础上进行操作，即列表的id没有改变
     a = [], a = a + [1]                               # 这里最后的a要构建一个新的列表，即a的id发生了变化
-     
+
 #-- 用切片来删除序列的某一段
     a = [1, 2, 3, 4, 5, 6, 7]
     a[1:4] = []                                       # a = [1, 5, 6, 7]
     a = [0, 1, 2, 3, 4, 5, 6, 7]
     del a[::2]                                        # 去除偶数项(偶数索引的)，a = [1, 3, 5, 7]
-    
+
 #-- 常用字典常量和操作
     D = {}
     D = {'spam':2, 'tol':{'ham':1}}                   # 嵌套字典
@@ -279,7 +280,7 @@
 #-- 字典解析
     D = {k:8 for k in ['s', 'd']}                     # {'s': 8, 'd': 8}
     D = {k:v for (k, v) in zip(['name', 'age'], ['tom', 12])}       # {'age': 12, 'name': tom}
-    
+
 #-- 字典的特殊方法__missing__：当查找找不到key时，会执行该方法
     class Dict(dict):
         def __missing__(self, key):
@@ -288,17 +289,17 @@
     dct = Dict()
     dct["foo"].append(1)    # 这有点类似于collections.defalutdict
     dct["foo"]              # [1]
-    
+
 #-- 元组和列表的唯一区别在于元组是不可变对象，列表时可变对象
     a = [1, 2, 3]           # a[1] = 0, OK
     a = (1, 2, 3)           # a[1] = 0, Error
     a = ([1, 2])            # a[0][1] = 0, OK
     a = [(1, 2)]            # a[0][1] = 0, Error
-    
+
 #-- 元组的特殊语法: 逗号和圆括号
     D = (12)                # 此时D为一个整数 即D = 12
     D = (12, )              # 此时D为一个元组 即D = (12, )
-    
+
 #-- 文件基本操作
     output = open(r'C:\spam', 'w')          # 打开输出文件，用于写
     input = open('data', 'r')               # 打开输入文件，用于读。打开的方式可以为'w', 'r', 'a', 'wb', 'rb', 'ab'等
@@ -318,12 +319,12 @@
     fp.seek(offset[,whence])                # 将文件打操作标记移到offset的位置。whence可以为0表示从头开始计算，1表示以当前位置为原点计算。2表示以文件末尾为原点进行计算。
     fp.seekable()                           # 是否可以seek
     fp.truncate([size])                     # 把文件裁成规定的大小，默认的是裁到当前文件操作标记的位置。
-    for line in open('data'): 
+    for line in open('data'):
         print(line)                         # 使用for语句，比较适用于打开比较大的文件
     open('f.txt', encoding = 'latin-1')     # Python3.x Unicode文本文件
     open('f.bin', 'rb')                     # Python3.x 二进制bytes文件
     # 文件对象还有相应的属性：buffer closed encoding errors line_buffering name newlines等
-    
+
 #-- 其他
     # Python中的真假值含义：1. 数字如果非零，则为真，0为假。 2. 其他对象如果非空，则为真
     # 通常意义下的类型分类：1. 数字、序列、映射。 2. 可变类型和不可变类型
@@ -359,7 +360,7 @@
     print('hello world')                   # 写入到文件log.log
     sys.stdout.close()
     sys.stdout = temp                      # 原有流的复原
-    
+
 #-- Python中and或or总是返回对象(左边的对象或右边的对象) 且具有短路求值的特性
     1 or 2 or 3                            # 返回 1
     1 and 2 and 3                          # 返回 3
@@ -400,7 +401,7 @@
     # 带索引的列表解析：使用enumerate函数
     for index, team in enumerate(["Packers", "49ers", "Ravens", "Patriots"]):
         print(index, team)                            # 输出0, Packers \n 1, 49ers \n ......
-    
+
 #-- 生成器表达式
     G = (sum(row) for row in M)                       # 使用小括号可以创建所需结果的生成器generator object
     next(G), next(G), next(G)                         # 输出(6, 15, 24)
@@ -423,7 +424,7 @@
         print()
     print(func.__doc__)                # 输出函数文档字符串
     print(Employee.__doc__)            # 输出类的文档字符串
-    
+
 #-- 命名惯例:
     """
     以单一下划线开头的变量名(_X)不会被from module import*等语句导入
@@ -447,14 +448,14 @@
     x[-3:]                             # 最后3个[4,5,6]
     x[::2]                             # 奇数项[1,3,5]
     x[1::2]                            # 偶数项[2,4,6]
-    
+
 #-- 手动迭代：iter和next
     L = [1, 2]
     I = iter(L)                        # I为L的迭代器
     I.next()                           # 返回1
     I.next()                           # 返回2
     I.next()                           # Error:StopIteration
-    
+
 #-- Python中的可迭代对象
     """
     1.range迭代器
@@ -474,7 +475,7 @@
     nonlocal x                         # 在函数或其他作用域中使用外层（非全局）变量
     yield x                            # 生成器函数返回
     lambda                             # 匿名函数
-    
+
 #-- Python函数变量名解析:LEGB原则，即:
     """
     local(functin) --> encloseing function locals --> global(module) --> build-in(python)
@@ -511,8 +512,8 @@
             global start               # 指定start为global变量start
             print(label, start)
             start += 3
-        return nested    
-    
+        return nested
+
 #-- 函数参数，不可变参数通过“值”传递，可变参数通过“引用”传递
     def f(a, b, c): print(a, b, c)
     f(1, 2, 3)                         # 参数位置匹配
@@ -533,17 +534,17 @@
     f(a = 1, b = 2)                    # 输出{'a':1, 'b':2}
     def f(a, *b, **c): print(a, b, c)  # 两者混合使用
     f(1, 2, 3, x=4, y=5)               # 输出1, (2, 3), {'x':4, 'y':5}
-    
+
 #-- 函数调用时的参数解包: * 和 ** 分别解包元组和字典
     func(1, *(2, 3))  <==>  func(1, 2, 3)
     func(1, **{'c':3, 'b':2})  <==>  func(1, b = 2, c = 3)
     func(1, *(2, 3), **{'c':3, 'b':2})  <==>  func(1, 2, 3, b = 2, c = 3)
-    
+
 #-- 函数属性:(自己定义的)函数可以添加属性
     def func():.....
     func.count = 1                     # 自定义函数添加属性
     print.count = 1                    # Error 内置函数不可以添加属性
-    
+
 #-- 函数注解: 编写在def头部行 主要用于说明参数范围、参数类型、返回值类型等
     def func(a:'spam', b:(1, 10), c:float) -> int :
         print(a, b, c)
@@ -564,7 +565,7 @@
     list(filter((lambda x: x > 0), range(-4, 5)))        # [1, 2, 3, 4]
     functools.reduce((lambda x, y: x + y), [1, 2, 3])    # 6
     functools.reduce((lambda x, y: x * y), [2, 3, 4])    # 24
-    
+
 #-- 生成器函数:yield VS return
     def gensquare(N):
         for i in range(N):
@@ -575,7 +576,7 @@
     next(x)                            # 等同于x.__next__() 返回0
     next(x)                            # 等同于x.__next__() 返回1
     next(x)                            # 等同于x.__next__() 抛出异常StopIteration
-    
+
 #-- 生成器表达式:小括号进行列表解析
     G = (x ** 2 for x in range(3))     # 使用小括号可以创建所需结果的生成器generator object
     next(G), next(G), next(G)          # 和上述中的生成器函数的返回值一致
@@ -602,10 +603,10 @@
         global X                       # 声明变量X为全局变量
         print(X)                       # 打印全局变量X
         X = 88                         # 改变全局变量X
-        
+
 #-- 函数的默认值是在函数定义的时候实例化的 而不是在调用的时候 例子:
     def foo(numbers=[]):               # 这里的[]是可变的
-        numbers.append(9)    
+        numbers.append(9)
         print(numbers)
     foo()                              # first time, like before, [9]
     foo()                              # second time, not like before, [9, 9]
@@ -623,7 +624,7 @@
     foo()                              # 还是输出1
     foo(3)                             # 输出4
     foo()                              # 还是输出1
-    
+
 
 """函数例子----函数例子----函数例子----函数例子----函数例子----函数例子----函数例子----函数例子----函数例子----函数例子----函数例子----函数例子----函数例子"""
 
@@ -645,7 +646,7 @@
     ord(c)                              # 返回ASCII字符对应的整数
     bin(x)                              # 将整数x转换为二进制字符串
     bool([x])                           # 将x转换为Boolean类型
-    
+
     """集合类操作"""
     basestring()                        # str和unicode的超类，不能直接调用，可以用作isinstance判断
     format(value [, format_spec])       # 格式化输出字符串，格式化的参数顺序从0开始，如“I am {0},I like {1}”
@@ -674,7 +675,7 @@
     input([prompt])                     # 获取用户输入，推荐使用raw_input，因为该函数将不会捕获用户的错误输入
     raw_input([prompt])                 # 设置输入，输入都是作为字符串处理
     open(name[, mode[, buffering]])     # 打开文件，与file有什么不同？推荐使用open
-    
+
     """其他"""
     callable(object)                    # 检查对象object是否可调用
     classmethod(func)                   # 用来说明这个func是个类方法
@@ -703,7 +704,7 @@
     next(iterator[, default])           # 类似于iterator.next()
     property([fget[, fset[, fdel[, doc]]]])           # 属性访问的包装类，设置后可以通过c.x=value等来访问setter和getter
     reduce(function, iterable[, initializer])         # 合并操作，从第一个开始是前两个参数，然后是前两个的结果与第三个合并进行处理，以此类推
-        def add(x,y):return x + y 
+        def add(x,y):return x + y
         reduce(add, range(1, 11))                     # 返回55 (注:1+2+3+4+5+6+7+8+9+10 = 55)
         reduce(add, range(1, 11), 20)                 # 返回75
     reload(module)                      # 重新加载模块
@@ -721,14 +722,14 @@
         zip(*z)                         # 解压缩：[(1, 2, 3), ("a", "b", "c")]
     unicode(string, encoding, errors)   # 将字符串string转化为unicode形式，string为encoded string。
 
-    
+
 """模块Moudle----模块Moudle----模块Moudle----模块Moudle----模块Moudle----模块Moudle----模块Moudle----模块Moudle----模块Moudle----模块Moudle----模块Moudle"""
 
 #-- Python模块搜索路径:
     """
     (1)程序的主目录    (2)PYTHONPATH目录 (3)标准链接库目录 (4)任何.pth文件的内容
     """
-    
+
 #-- 查看全部的模块搜索路径
     import sys
     sys.path
@@ -740,7 +741,7 @@
     sys.stdout                          # stdout 和 stderr 都是类文件对象，但是它们都是只写的。它们都没有 read 方法，只有 write 方法
     sys.stdout.write("hello")
     sys.stderr
-    sys.stdin   
+    sys.stdin
 
 #-- 模块的使用代码
     import module1, module2             # 导入module1 使用module1.printer()
@@ -750,7 +751,7 @@
 #-- 重载模块reload: 这是一个内置函数 而不是一条语句
     from imp import reload
     reload(module)
-    
+
 #-- 模块的包导入:使用点号(.)而不是路径(dir1\dir2)进行导入
     import dir1.dir2.mod                # d导入包(目录)dir1中的包dir2中的mod模块 此时dir1必须在Python可搜索路径中
     from dir1.dir2.mod import *         # from语法的包导入
@@ -761,16 +762,16 @@
     首次进行包导入时 该文件会自动执行
     高级功能:在该文件中使用__all__列表来定义包(目录)以from*的形式导入时 需要导入什么
     """
-    
+
 #-- 包相对导入:使用点号(.) 只能使用from语句
     from . import spam                  # 导入当前目录下的spam模块（错误: 当前目录下的模块, 直接导入即可）
     from .spam import name              # 导入当前目录下的spam模块的name属性（错误: 当前目录下的模块, 直接导入即可，不用加.）
     from .. import spam                 # 导入当前目录的父目录下的spam模块
-    
+
 #-- 包相对导入与普通导入的区别
     from string import *                # 这里导入的string模块为sys.path路径上的 而不是本目录下的string模块(如果存在也不是)
     from .string import *               # 这里导入的string模块为本目录下的(不存在则导入失败) 而不是sys.path路径上的
-    
+
 #-- 模块数据隐藏:最小化from*的破坏
     _X                                  # 变量名前加下划线可以防止from*导入时该变量名被复制出去
     __all__ = ['x', 'x1', 'x2']         # 使用__all__列表指定from*时复制出去的变量名(变量名在列表中为字符串形式)
@@ -783,17 +784,17 @@
     __file__                            # 模块文件的文件名，包括全路径
     __name__                            # 主文件或者被导入文件
     __package__                         # 模块所在的包
-        
+
 #-- import语句from语句的as扩展
     import modulename as name
     from modulename import attrname as name
-    
+
 #-- 得到模块属性的几种方法 假设为了得到name属性的值
     M.name
     M.__dict__['name']
     sys.modules['M'].name
     getattr(M, 'name')
-    
+
 
 """类与面向对象----类与面向对象----类与面向对象----类与面向对象----类与面向对象----类与面向对象----类与面向对象----类与面向对象----类与面向对象----类与面向对象"""
 
@@ -803,9 +804,9 @@
         def __init__(self, name):       # 函数属性:构造函数
             self.name = name
         def __del__(self):              # 函数属性:析构函数
-            print("goodbey ", self.name)    
+            print("goodbey ", self.name)
     I1 = C1('bob')
-    
+
 #-- Python的类没有基于参数的函数重载
     class FirstClass:
         def test(self, string):
@@ -824,16 +825,16 @@
     bob.__class__                       # <class 'Person'>
     bob.__class__.__name__              # 'Person'
     bob.__dict__                        # {'pay':0, 'name':'bob', 'job':'Manager'}
-    
+
 #-- 返回1中 数据属性spam是属于类 而不是对象
     I1 = C1('bob'); I2 = C2('tom')      # 此时I1和I2的spam都为42 但是都是返回的C1的spam属性
     C1.spam = 24                        # 此时I1和I2的spam都为24
     I1.spam = 3                         # 此时I1新增自有属性spam 值为2 I2和C1的spam还都为24
-    
+
 #-- 类方法调用的两种方式
     instance.method(arg...)
     class.method(instance, arg...)
-    
+
 #-- 抽象超类的实现方法
     # (1)某个函数中调用未定义的函数 子类中定义该函数
         def delegate(self):
@@ -847,7 +848,7 @@
             @abstractmethod
             def action(self): pass
         x = Super()                     # 返回 TypeError: Can't instantiate abstract class Super with abstract methods action
-    
+
 #-- # OOP和继承: "is-a"的关系
     class A(B):
         pass
@@ -879,7 +880,7 @@
     print(I)                            # 返回 self.name = tom
     I.__name = 'jeey'                   # 这里无法访问 __name为伪私有属性
     I._C1__name = 'jeey'                # 这里可以修改成功 self.name = jeey
-    
+
 #-- 类方法是对象:无绑定类方法对象 / 绑定实例方法对象
     class Spam:
         def doit(self, message):
@@ -917,9 +918,9 @@
     s.set_age(25)                       # 调用实例方法
     Student.set_age = MethodType(set_age, Student)    # 为类绑定一个方法 类的所有实例都拥有该方法
 
-    
+
 """类的高级话题----类的高级话题----类的高级话题----类的高级话题----类的高级话题----类的高级话题----类的高级话题----类的高级话题----类的高级话题----类的高级话题"""
-    
+
 #-- 多重继承: "混合类", 搜索方式"从下到上 从左到右 广度优先"
     class A(B, C):
         pass
@@ -943,7 +944,7 @@
             print(message + ' from Child')
     fooChild = FooChild(10)
     fooChild.bar('HelloWorld')
-    
+
 #-- #实例方法 / 静态方法 / 类方法
     class Methods:
         def imeth(self, x): print(self, x)      # 实例方法：传入的是实例和数据，操作的是实例的属性
@@ -958,7 +959,7 @@
     obj.smeth(4)                                # 这里可以使用实例进行调用
     Methods.cmeth(5)                            # 类方法调用 <class '__main__.Methods'> 5
     obj.cmeth(6)                                # <class '__main__.Methods'> 6
-    
+
 #-- 函数装饰器:是它后边的函数的运行时的声明 由@符号以及后边紧跟的"元函数"(metafunction)组成
         @staticmethod
         def smeth(x): print(x)
@@ -971,7 +972,7 @@
     # 等同于
         def cmeth(cls, x): print(x)
         cmeth = classmethod(cmeth)
-    
+
 #-- 类修饰器:是它后边的类的运行时的声明 由@符号以及后边紧跟的"元函数"(metafunction)组成
         def decorator(aClass):.....
         @decorator
@@ -986,7 +987,7 @@
     # __slots__属性只对当前类起作用, 对其子类不起作用
     # __slots__属性能够节省内存
     # __slots__属性可以为列表list，或者元组tuple
-    
+
 #-- 类属性高级话题: @property
     # 假设定义了一个类:C，该类必须继承自object类，有一私有变量_x
     class C(object):
@@ -1021,7 +1022,7 @@
     c.x = 100                         # 自动调用setter方法
     y = c.x                           # 自动调用x方法
     del c.x                           # 自动调用deleter方法
-    
+
 #-- 定制类: 重写类的方法
     # (1)__str__方法、__repr__方法: 定制类的输出字符串
     # (2)__iter__方法、next方法: 定制类的可迭代性
@@ -1042,7 +1043,7 @@
         def __init__(self):
             self.data = {}
         def __getitem__(self, n):             # 定义getitem方法
-            print('getitem:', n)                
+            print('getitem:', n)
             return self.data[n]
         def __setitem__(self, key, value):    # 定义setitem方法
             print('setitem:key = {0}, value = {1}'.format(key, value))
@@ -1069,7 +1070,7 @@
     #    (6)__len__方法：求类的长度
     def __len__(self):
         return len(self.data)
-    
+
 #-- 动态创建类type()
     # 一般创建类 需要在代码中提前定义
         class Hello(object):
@@ -1082,14 +1083,14 @@
     # 动态类型语言中 类可以动态创建 type函数可用于创建新类型
         def fn(self, name='world'):           # 先定义函数
             print('Hello, %s.' % name)
-        Hello = type('Hello', (object,), dict(hello=fn)) 
+        Hello = type('Hello', (object,), dict(hello=fn))
         # 创建Hello类 type原型: type(name, bases, dict)
         h = Hello()                           # 此时的h和上边的h一致
 
 
 """异常相关----异常相关----异常相关----异常相关----异常相关----异常相关----异常相关----异常相关----异常相关----异常相关----异常相关----异常相关----异常相关"""
-    
-#-- #捕获异常: 
+
+#-- #捕获异常:
         try:
         except:                               # 捕获所有的异常 等同于except Exception:
         except name:                          # 捕获指定的异常
@@ -1107,10 +1108,10 @@
 #-- Python3.x中的异常链: raise exception from otherException
     except Exception as X:
         raise IndexError('Bad') from X
-        
+
 #-- assert子句: assert <test>, <data>
     assert x < 0, 'x must be negative'
-    
+
 #-- with/as环境管理器:作为常见的try/finally用法模式的替代方案
     with expression [as variable], expression [as variable]:
     # 例子:
@@ -1135,7 +1136,7 @@
         MyBad()
     except MyBad as x:
         print(x)
-    
+
 #-- 用户定制异常数据
     class FormatError(Exception):
         def __init__(self, line ,file):
@@ -1166,7 +1167,7 @@
         # type:正在处理的异常的异常类型
         # value:引发的异常的实例
         # traceback:堆栈信息
-        
+
 #-- 异常层次
     BaseException
     +-- SystemExit
@@ -1192,7 +1193,7 @@
         +-- ValueError
         +-- Warning
 
-    
+
 """Unicode和字节字符串---Unicode和字节字符串----Unicode和字节字符串----Unicode和字节字符串----Unicode和字节字符串----Unicode和字节字符串----Unicode和字节字符串"""
 
 #-- Python的字符串类型
@@ -1214,7 +1215,7 @@
     """UTF-8"""                   # 可变字节数，小于128的字符表示为单个字节，128到0X7FF之间的代码转换为两个字节，0X7FF以上的代码转换为3或4个字节
     # 注意：可以看出来，ASCII码是Latin-1和UTF-8的一个子集
     # 注意：utf-8是unicode的一种实现方式，unicode、gbk、gb2312是编码字符集
-    
+
 #-- 查看Python中的字符串编码名称，查看系统的编码
     import encodings
     help(encoding)
@@ -1223,12 +1224,12 @@
     sys.getdefaultencoding()      # 'utf-8'
     sys.getdefaultencoding()      # 返回当前系统平台的编码类型
     sys.getsizeof(object)         # 返回object占有的bytes的大小
-    
+
 #-- 源文件字符集编码声明: 添加注释来指定想要的编码形式 从而改变默认值 注释必须出现在脚本的第一行或者第二行
     """说明：其实这里只会检查#和coding:utf-8，其余的字符都是为了美观加上的"""
     # _*_ coding: utf-8 _*_
     # coding = utf-8
-    
+
 #-- #编码: 字符串 --> 原始字节       #解码: 原始字节 --> 字符串
 
 #-- Python3.x中的字符串应用
@@ -1256,7 +1257,7 @@
         B.decode()                # 'spam'
         str(B)                    # "b'spam'"，不带编码的str调用，结果为打印该bytes对象
         str(B, encoding = 'ascii')# 'spam'，带编码的str调用，结果为转化该bytes对象
-    
+
 #-- Python2.x的编码问题
     u = u'汉'
     print repr(u)                 # u'\xba\xba'
@@ -1275,10 +1276,10 @@
     B = bytes([97, 98, 99])
     B = 'abc'.encode()
     # bytes对象的方法调用基本和str类型一致 但:B[0]返回的是ASCII码值97, 而不是b'a'
-    
+
 #-- #文本文件: 根据Unicode编码来解释文件内容，要么是平台的默认编码，要么是指定的编码类型
     # 二进制文件：表示字节值的整数的一个序列 open('bin.txt', 'rb')
-    
+
 #-- Unicode文件
     s = 'A\xc4B\xe8C'             # s = 'A?BèC'  len(s) = 5
     #手动编码
@@ -1294,7 +1295,7 @@
         s = open('latindata', 'rb').read().decode('latin-1')      # s = 'A?BèC'  len(s) = 5
         s = open('utf8data', 'r', encoding = 'utf-8').read()      # s = 'A?BèC'  len(s) = 5
         s = open('utf8data', 'rb').read().decode('utf-8')         # s = 'A?BèC'  len(s) = 5
-        
+
 
 """其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他----其他"""
 

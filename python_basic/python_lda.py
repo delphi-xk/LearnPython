@@ -136,7 +136,8 @@ class CorpusSet(object):
         """
         :key: 利用数据文件初始化语料集数据。文件每一行的数据格式: id[tab]word1 word2 word3......
         """
-        with open(file_name, "r", encoding="utf-8") as file_iter:
+        # FIX: remove encoding="utf-8"
+        with open(file_name, "r") as file_iter:
             self.init_corpus_with_articles(file_iter)
         return
 
@@ -204,7 +205,7 @@ class CorpusSet(object):
         """
         :key: 保存word字典,即self.local_bi的数据
         """
-        with open(file_name, "w", encoding="utf-8") as f_save:
+        with open(file_name, "w") as f_save:
             f_save.write(str(self.local_bi))
         return
 
@@ -213,7 +214,7 @@ class CorpusSet(object):
         :key: 加载word字典,即加载self.local_bi的数据
         """
         self.local_bi.clear()
-        with open(file_name, "r", encoding="utf-8") as f_load:
+        with open(file_name, "r") as f_load:
             for _id, _word in [line.strip().split() for line in f_load if line.strip()]:
                 self.local_bi.add_key_value(int(_id), _word.strip())
         self.V = len(self.local_bi)
